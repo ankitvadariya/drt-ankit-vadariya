@@ -1,0 +1,44 @@
+<div class="container" *ngIf="courseService.course && courseService.course.id !== null">
+  <h2>Course #</h2>
+  <p></p>
+  <form (ngSubmit)="save(courseForm)" #courseForm="ngForm" [ngClass]="{
+    'ng-submited': courseForm.submitted
+  }">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="courseTitle">Title</label>
+        <input type="text" class="form-control" id="courseTitle" name="title" placeholder="Title" #title="ngModel"
+          [(ngModel)]="courseService.course.title" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-3">
+        <label for="courseDuration">Duration</label>
+        <input type="number" class="form-control" id="courseDuration" placeholder="Duration" name="duration"
+          #duration="ngModel" [(ngModel)]="courseService.course.duration" required>
+      </div>
+
+      <div class="form-group col-md-3">
+        <label>Duration Unit</label>
+        <select class="form-control" name="durationUnit" #durationUnit="ngModel"
+          [(ngModel)]="courseService.course['duration-unit']" required>
+          <option>Choose...</option>
+          <option value="day">Day</option>
+          <option value="month">Month</option>
+          <option value="year">Year</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="courseDescription">Example textarea</label>
+        <textarea class="form-control" id="courseDescription" rows="3" name="description" #description="ngModel"
+          [(ngModel)]="courseService.course.description" required></textarea>
+      </div>
+
+
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

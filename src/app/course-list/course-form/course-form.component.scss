@@ -1,0 +1,8 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+
+.ng-submited {
+  .ng-invalid {
+    border-color: theme-color("danger");
+  }
+}

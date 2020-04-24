@@ -1,0 +1,9 @@
+<td>{{course.id}}</td>
+<td>{{course.title}}</td>
+<td>{{course.duration}} {{course["duration-unit"]}}</td>
+<td>{{course.description}}</td>
+<td>
+  <a class="btn btn-sm btn-primary" routerLink="/course/{{course.id}}"><i class="fa fa-edit"></i></a>
+  &nbsp;&nbsp;
+  <button (click)="courseService.delete(course.id)" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+</td>

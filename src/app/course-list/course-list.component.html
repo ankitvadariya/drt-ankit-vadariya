@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>Course List <a class="btn btn-success btn-new" routerLink="/course/new">New</a></h2>
+  <p>You can add , update & delete course from here.</p>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Duration</th>
+        <th>Description</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="app-course" *ngFor="let crs of courseService.list" [course]="crs">
+      </tr>
+    </tbody>
+  </table>
+</div>
